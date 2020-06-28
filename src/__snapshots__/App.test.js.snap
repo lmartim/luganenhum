@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render app 1`] = `
+<DocumentFragment>
+  <div>
+    <section
+      class="sc-AxjAm cuuhHc"
+    >
+      <h1
+        class="sc-AxirZ dZGgyq"
+      >
+        LUGANENHUM
+      </h1>
+      <div
+        class="sc-AxiKw hMnuRQ"
+      >
+        <div
+          class="sc-AxhCb fAfEay"
+        >
+          QUADRINHOS
+        </div>
+        <div
+          class="sc-AxhCb fAfEay"
+        >
+          PERSONAGENS
+        </div>
+      </div>
+    </section>
+    <section
+      class="sc-fznKkj kgTZZ"
+    >
+      <div
+        class="sc-fznyAO begGwq"
+      >
+        <h1
+          data-testid="title"
+        >
+          QUADRINHOS
+        </h1>
+      </div>
+      <div
+        class="container"
+      >
+        <section
+          class="sc-fzpans kkFAbe"
+          data-testid="comicListBlock"
+        >
+          <div
+            class="columns is-multiline"
+          >
+            <div
+              class="column is-one-fifth"
+            >
+              <div
+                class="sc-AxgMl hHtqAz"
+                data-testid="comicBoxBlock"
+              >
+                <img
+                  alt="Spider-Man #1"
+                  class="sc-AxheI imDZmf"
+                  src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/b/b0/Spider-Man_FFH_Profile/portrait_uncanny.jpg"
+                />
+                <div
+                  class="sc-Axmtr exiemV"
+                >
+                  Spider-Man #1
+                </div>
+                <div
+                  class="sc-AxmLO ewGoCP"
+                >
+                  Diversos Autores
+                </div>
+                <div
+                  class="sc-AxhUy hoxGdc"
+                >
+                  <button
+                    class="is-primary button"
+                    tabindex="0"
+                  >
+                    Saber Mais
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-fzplWN jiVDSy"
+          >
+            <button
+              class="is-primary button"
+              tabindex="0"
+            >
+              Carregar Mais
+            </button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</DocumentFragment>
+`;
