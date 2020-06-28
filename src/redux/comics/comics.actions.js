@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const apiGateway = 'http://gateway.marvel.com/v1/public';
-const apiKey = 'f1dd356377190812ef6ddeaf6bae2550'
+const apiGateway = process.env.REACT_APP_API_URL;
+const apiKey = process.env.REACT_APP_API_KEY
 
 export function getComics(limit) {
   return function(dispatch) {
