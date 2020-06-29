@@ -1,6 +1,6 @@
 # Luganenhum
 
-Sendo apresentado em Guardiões da Galáxia, Luganenhum é a cabeça de um Celestial, que foi decepada a milhões de anos. Após ter sido como base de minerações por diversos anos, atualmente, serve como hub para troca e coleta de informações por diversas facções, entra elas, os Guardiões da Galáxia.
+Sendo apresentado em Guardiões da Galáxia, Luganenhum é a cabeça de um Celestial, que foi decepada a milhões de anos. Após ter servido como base de minerações por diversos anos, atualmente, serve como hub para troca e coleta de informações por diversas facções, entra elas, os Guardiões da Galáxia.
 
 Se inspirando nas HQs, está aplicação pode ser usada para se obter algumas informações da Marvel Comics, como uma listagem e detalhes sobre diversos quadrinhos e uma breve pesquisa de personagens.
 
