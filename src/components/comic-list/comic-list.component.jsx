@@ -20,18 +20,26 @@ class ComicList extends Component {
     }
   }
 
-  static getDerivedStateFromProps(props) {
-    return {
+  // static getDerivedStateFromProps(props) {
+  //   return {
+  //     comics: props.comics,
+  //     loadingMore: false
+  //   }
+  // }
+
+  UNSAFE_componentWillReceiveProps(props) {
+    this.setState({
       comics: props.comics,
       loadingMore: false
-    }
+    })
   }
 
   loadMoreComics() {
-    this.props.getComics(this.state.comics.limit + 10)
     this.setState({
       loadingMore: true
     })
+    console.log(this.state)
+    this.props.getComics(this.state.comics.limit + 10)
   }
 
   render() {
