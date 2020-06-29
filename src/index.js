@@ -21,13 +21,17 @@ WebFont.load({
   }
 });
 
+// Englobamento a aplicação dentro diversos HOC:
+// Provider para o store
+// BrowserRouter para o roteamento
+// PersistGate para a persistência do estado
 ReactDOM.render(
   <Provider store={store}>
-      <BrowserRouter>
-        <PersistGate persistor={persistor}>
+      <PersistGate persistor={persistor}>
+        <BrowserRouter>
           <App />
-        </PersistGate>
-      </BrowserRouter>
+        </BrowserRouter>
+      </PersistGate>
     </Provider>,
   document.getElementById('root')
 );

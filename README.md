@@ -41,3 +41,7 @@ Uma breve cobertura de testes foi realizada, bastando rodar um comando, para exe
 ```yarn
 yarn test
 ```
+
+## Arquivo .env
+
+Normalmente, o arquivo .env não é comitado, tendo as variáveis ajustadas no deploy, de acordo com o ambiente. Para fins de testes, está arquivo está sendo enviado no momento.

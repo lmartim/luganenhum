@@ -14,6 +14,8 @@ import { Button, Container } from 'react-bulma-components/dist';
 import './home.styles.css'
 import '../../utils/css/responsive.styles.scss'
 
+// Page responsável pela primeira página do app
+// Ela irá exibir uma lista dos quadrinhos
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -21,19 +23,20 @@ class Home extends Component {
     this.state = {
       comics: props.comics
     }
-    
   }
 
   componentDidMount() {
+    // Buscando os 10 primeiros quadrinhos da API
     this.props.getComics(10)
   }
 
+  // Atualizando o estado sempre que alguma informação por atualizada
   static getDerivedStateFromProps(props, state) {
     if (props.comics.status === 'loading') {
+      // Verifica o estado da página, para atualizar a quantidade de HQs
       props.getComics(state.comics.limit)
       return null
     }
-
 
     return {
       comics: props.comics
@@ -43,19 +46,23 @@ class Home extends Component {
   render() {
     return (
       <HomeContentBlock>
+        {/* Chama o componente de título */}
         <Title title={'QUADRINHOS'} />
         <Container>
           {(() => {
             switch (this.state.comics.status) {
               case 'loading':
+                // Caso status seja loading, exiber ícone de carregamento
                 return (
                   <HomeContentBlockLoader>
                     <LoaderIcon/>
                   </HomeContentBlockLoader>
                 )
               case 'success':
+                // Rendereza listagem de quadrinhos, em caso de status sucesso
                 return <ComicList />
               case 'fail':
+                // Em caso de falha, exibe mensagem e botão para tentar novamente
                 return (
                   <HomeContentBlockFail>
                     Não foi possível obter os dados
@@ -74,6 +81,7 @@ class Home extends Component {
   }
 };
 
+// Funções do Redux, para obter o estado e chamar as actions
 const mapStateToProps = state => ({
   comics: state.comics 
 })
@@ -87,6 +95,7 @@ const mapDispatchToProps = dispatch => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
+// CSS-in-JS
 const HomeContentBlock = styled.section`
   min-height: calc(100vh - 81px);
   background-color: white;

@@ -6,6 +6,8 @@ import Home from './pages/home/home.component';
 import Details from './pages/details/details.component';
 import Characters from './pages/characters/characters.component';
 
+// Configurado as rotas do projeto e seus respectivos componentes
+// Também é adicionado o Header no topo da aplicação
 function App() {
   return (
     <div>

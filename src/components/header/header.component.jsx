@@ -2,6 +2,8 @@ import React from 'react';
 import { withRouter } from 'react-router-dom'
 import styled from "styled-components";
 
+// Componente com o header da aplicação
+// Exibe um logo e um menu com duas opções
 const Header = ({history}) => {
   return (
   <HeaderBlock>
@@ -22,6 +24,7 @@ const Header = ({history}) => {
 
 export default withRouter(Header);
 
+// CSS-in-JS
 const HeaderBlock = styled.section`
   background-color: #202020;
   width: 100%;

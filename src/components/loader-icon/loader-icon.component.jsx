@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from "styled-components";
 
+// Componente que exibe um ícone de loading e mensagem de carregamento
 const LoaderIcon = () => (
   <LoaderBlock>
     <Icon />
@@ -8,6 +9,7 @@ const LoaderIcon = () => (
   </LoaderBlock>
 )
 
+// CSS-in-JS
 const LoaderBlock = styled.div`
   color: #202020;
   text-align: center;

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 import styled from "styled-components";
 
+// Componente responsável pelos boxes dos personagens, exibidos na listagem
+// Recebe uma prop com as informações do personagem
 class CharacterBox extends Component {
   constructor(props) {
     super(props)
@@ -17,20 +18,18 @@ class CharacterBox extends Component {
 
     return (
       <CharacterBoxBlock>
+        {/* Exibe a imagem do personagem */}
         <CharacterBoxImage src={`${character.thumbnail.path}/portrait_uncanny.${character.thumbnail.extension}`} alt={character.name} />
+        {/* Exibe o nome do personagem */}
         <CharacterBoxTitle>{character.name}</CharacterBoxTitle>
       </CharacterBoxBlock>
     )
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-  }
-}
+export default withRouter((CharacterBox));
 
-export default withRouter(connect(null, mapDispatchToProps)(CharacterBox));
-
+//CSS-in-JS
 const CharacterBoxBlock = styled.div`
   padding: 20px;
   border: 1px solid #393939;

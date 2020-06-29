@@ -13,6 +13,8 @@ import { Button } from 'react-bulma-components/dist';
 
 import './characters.styles.css'
 
+// Page responsável pela página de personagens
+// Ela irá exibir uma lista dopersonagens
 class Characters extends Component {
   constructor(props) {
     super(props);
@@ -22,10 +24,13 @@ class Characters extends Component {
     }
   }
 
+  
   componentDidMount() {
+    // Buscando uma lista de personagens da API
     this.props.getCharacters()
   }
 
+  // Atualizando o estado sempre que alguma informação por atualizada
   static getDerivedStateFromProps(props) {
     return {
       characters: props.characters
@@ -35,18 +40,22 @@ class Characters extends Component {
   render() {
     return (
       <CharacterContentBlock>
+        {/* Chama o componente de título */}
         <Title title={'PERSONAGENS'} />
         {(() => {
           switch (this.state.characters.status) {
             case 'loading':
+              // Caso status seja loading, exiber ícone de carregamento
               return (
                 <CharacterContentBlockLoader>
                   <LoaderIcon/>
                 </CharacterContentBlockLoader>
               )
             case 'success':
+              // Rendereza listagem de personagens, em caso de status sucesso
               return <CharacterList />
             case 'fail':
+              // Em caso de falha, exibe mensagem e botão para tentar novamente
               return (
                 <CharacterContentBlockFail>
                   Não foi possível obter os dados
@@ -64,6 +73,7 @@ class Characters extends Component {
   }
 };
 
+// Funções do Redux, para obter o estado e chamar as actions
 const mapStateToProps = state => ({
   characters: state.characters
 })
@@ -76,6 +86,7 @@ const mapDispatchToProps = dispatch => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Characters);
 
+// CSS-in-JS
 const CharacterContentBlock = styled.section`
   min-height: calc(100vh - 81px);
   background-color: white;

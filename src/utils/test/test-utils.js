@@ -8,6 +8,10 @@ import configureMockStore from "redux-mock-store";
 
 import { persistor } from '../../redux/store';
 
+// Componente para ajustes na biblioteca de teste
+
+// Setado um estado mock para o Redux, permitindo
+// melhores testes relacionados aos estados
 const mockStore = configureMockStore([thunk]);
 const store = mockStore({
   comics: {
@@ -69,6 +73,8 @@ const store = mockStore({
   }
 });
 
+// Adicionado os componentes Provider, BrowserRouter e PersistGate no wrapper de testes,
+// assim tornando desnecessário englobar eles em cada um dos testes
 const AllTheProviders = ({ children }) => {
   return (
     <Provider store={store}>

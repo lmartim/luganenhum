@@ -8,6 +8,8 @@ import { saveComic } from '../../redux/comics/comics.actions';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Button } from 'react-bulma-components/dist';
 
+// Componente responsável pelos boxes dos quadrinhos, exibidos na listagem
+// Recebe uma prop com as informações da HQ
 class ComicBox extends Component {
   constructor(props) {
     super(props)
@@ -23,8 +25,14 @@ class ComicBox extends Component {
     const comic = this.state.comic
 
     return (
+      // Ao clique, irá salvar as informações do quadrinho selecionado e ir para a página de detalhes
       <ComicBoxBlock data-testid="comicBoxBlock" onClick={() => { this.props.saveComic(comic); this.props.history.push({ pathname: '/detalhes' }); }}>
+
+        {/* Exibe a imagem da capa da HQ */}
         <ComicBoxImage src={`${comic.thumbnail.path}/portrait_uncanny.${comic.thumbnail.extension}`} alt={comic.title} />
+
+        {/* Faz uma listagem de até dois autores. Caso seja maior, 
+        irá exiber a label 'diversos autores', para não quebrar tanto o layout */}
         <ComicBoxTitle>{comic.title}</ComicBoxTitle>
         {
           comic.creators.available < 3 ? (
@@ -35,6 +43,8 @@ class ComicBox extends Component {
             <ComicBoxAuthor>Diversos Autores</ComicBoxAuthor>
           )
         }
+
+        {/* Ovarlay exibido durante o mouse over, para indicar o click do componente */}
         <ComicBoxOverlay>
           <Button color="primary">
             Saber Mais
@@ -45,6 +55,7 @@ class ComicBox extends Component {
   }
 }
 
+// Função do Redux, para chamar as actions
 const mapDispatchToProps = dispatch => {
   return {
     saveComic: (comic) => dispatch(saveComic(comic))
@@ -53,6 +64,7 @@ const mapDispatchToProps = dispatch => {
 
 export default withRouter(connect(null, mapDispatchToProps)(ComicBox));
 
+// CSS-in-JS
 const ComicBoxOverlay = styled.div`
   display: none;
   position: absolute;
